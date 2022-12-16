@@ -3,6 +3,7 @@ using MilleniumAspWebAPI.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: false)
@@ -31,6 +32,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors();
 app.UseAuthorization();
 
 app.MapControllers();
